@@ -1,454 +1,545 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>⚔️ Dota 2 FPS Boost 2026 ⚔️</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dota 2 FPS Guide 2026</title>
+    <style>
+        /* --- Стиль в духе Dota 2 --- */
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
 
-    body {
-      background: #0b0c0e;
-      background-image: radial-gradient(circle at 20% 30%, #1a1e24 0%, #0a0b0d 100%);
-      color: #d5d8dd;
-      font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
-      min-height: 100vh;
-      padding: 2rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+        :root {
+            --dota-gold: #c79a4a;
+            --dota-gold-dark: #8b6b2c;
+            --dota-bg: #0b0a0c;
+            --dota-panel: #1a171e;
+            --dota-border: #2f2a34;
+            --dota-text: #b8b0b0;
+            --dota-text-light: #f0e8d0;
+        }
 
-    .container {
-      max-width: 1100px;
-      width: 100%;
-      background: rgba(16, 18, 22, 0.8);
-      backdrop-filter: blur(4px);
-      border: 1px solid #b8860b;
-      border-radius: 32px;
-      padding: 2.5rem 2.2rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 0 1px #7a5c1a inset;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #b8860b;
-      padding-bottom: 1rem;
-      margin-bottom: 2rem;
-    }
+        body {
+            background-color: var(--dota-bg);
+            background-image: radial-gradient(ellipse at 10% 20%, #1f1a22 0%, #0a090b 100%);
+            color: var(--dota-text);
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+        /* Стилизация скролла */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: var(--dota-gold-dark); border-radius: 4px; }
 
-    .logo i {
-      font-size: 2.6rem;
-      color: #e6b422;
-      text-shadow: 0 0 12px #b8860b;
-    }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(10, 9, 11, 0.85);
+            border: 1px solid var(--dota-border);
+            border-radius: 12px;
+            padding: 30px 35px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), 0 0 15px rgba(199, 154, 74, 0.1);
+        }
 
-    .logo h1 {
-      font-size: 2.1rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      background: linear-gradient(180deg, #f5d77b, #b8860b);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
-    }
+        /* --- Шапка --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--dota-gold-dark);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
 
-    .lang-toggle {
-      display: flex;
-      gap: 6px;
-      background: #1f2329;
-      padding: 8px 12px;
-      border-radius: 40px;
-      border: 1px solid #6a4f1a;
-    }
+        .logo h1 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            color: var(--dota-gold);
+            font-size: 2.2rem;
+            text-shadow: 0 0 20px rgba(199, 154, 74, 0.3);
+            letter-spacing: 2px;
+        }
+        .logo span {
+            font-size: 0.9rem;
+            color: #6a5f4b;
+            display: block;
+            font-weight: 300;
+            letter-spacing: 4px;
+        }
 
-    .lang-btn {
-      background: transparent;
-      border: none;
-      color: #a0a5ae;
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 6px 18px;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: 0.2s;
-      letter-spacing: 0.5px;
-    }
+        .lang-toggle {
+            background: var(--dota-panel);
+            border: 1px solid var(--dota-border);
+            border-radius: 30px;
+            padding: 5px;
+            display: flex;
+            gap: 5px;
+        }
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: #6a5f4b;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: 'Cinzel', serif;
+        }
+        .lang-btn.active {
+            background: var(--dota-gold);
+            color: #0b0a0c;
+            box-shadow: 0 0 15px rgba(199, 154, 74, 0.4);
+        }
+        .lang-btn:hover:not(.active) {
+            color: #f0e8d0;
+        }
 
-    .lang-btn.active {
-      background: #b8860b;
-      color: #0b0c0e;
-      box-shadow: 0 0 12px #b8860b;
-    }
+        /* --- Навигация (оглавление) --- */
+        .toc {
+            background: var(--dota-panel);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 3px solid var(--dota-gold);
+        }
+        .toc h3 {
+            color: var(--dota-gold);
+            font-family: 'Cinzel', serif;
+            margin-bottom: 8px;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        .toc ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 25px;
+        }
+        .toc ul li a {
+            color: var(--dota-text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.2s;
+            border-bottom: 1px dashed transparent;
+        }
+        .toc ul li a:hover {
+            color: var(--dota-gold);
+            border-bottom-color: var(--dota-gold);
+        }
 
-    .lang-btn:hover {
-      color: #f0e6c5;
-    }
+        /* --- Карточки разделов --- */
+        .section {
+            margin-bottom: 40px;
+            background: rgba(26, 23, 30, 0.5);
+            border-radius: 10px;
+            padding: 25px;
+            border: 1px solid var(--dota-border);
+            transition: 0.2s;
+            scroll-margin-top: 20px;
+        }
+        .section:hover {
+            border-color: #4a3f4a;
+        }
 
-    .section {
-      margin-bottom: 2.8rem;
-    }
+        .section h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--dota-gold);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--dota-border);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section h2 small {
+            font-size: 0.8rem;
+            color: #6a5f4b;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+        }
 
-    .section-title {
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: #e6b422;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border-left: 6px solid #b8860b;
-      padding-left: 18px;
-      text-shadow: 0 2px 4px #00000077;
-    }
+        .section p, .section li {
+            color: #d4cccc;
+            font-size: 1rem;
+        }
+        .section ul, .section ol {
+            padding-left: 25px;
+            margin: 10px 0;
+        }
+        .section li {
+            margin-bottom: 6px;
+        }
 
-    .section-title i {
-      color: #d4a017;
-      font-size: 1.8rem;
-    }
+        /* Блоки кода (консольные команды) */
+        .code-block {
+            background: #0d0b10;
+            border: 1px solid #2a232e;
+            border-radius: 6px;
+            padding: 12px 18px;
+            margin: 12px 0;
+            font-family: 'Courier New', monospace;
+            color: #e6dbb5;
+            font-size: 0.95rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-word;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+        .code-block .cmd {
+            color: #f5c542;
+        }
+        .code-block .comment {
+            color: #6f8f6f;
+            font-style: italic;
+        }
 
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.6rem;
-    }
+        .badge {
+            display: inline-block;
+            background: var(--dota-gold-dark);
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-right: 6px;
+        }
 
-    .card {
-      background: #14181e;
-      border-radius: 24px;
-      padding: 1.6rem 1.5rem;
-      border: 1px solid #2f353e;
-      transition: 0.25s ease;
-      box-shadow: 0 8px 0 #0a0c0e;
-    }
+        /* Ссылки */
+        a {
+            color: #b89b5e;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dotted transparent;
+            transition: 0.2s;
+        }
+        a:hover {
+            color: var(--dota-gold);
+            border-bottom-color: var(--dota-gold);
+        }
 
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: #b8860b;
-      box-shadow: 0 12px 0 #0a0c0e, 0 0 20px #b8860b33;
-    }
+        .btn-dota {
+            display: inline-block;
+            background: transparent;
+            border: 1px solid var(--dota-gold-dark);
+            color: var(--dota-gold);
+            padding: 5px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-top: 5px;
+        }
+        .btn-dota:hover {
+            background: var(--dota-gold);
+            color: #0b0a0c;
+            border-color: var(--dota-gold);
+        }
 
-    .card h3 {
-      color: #f5d77b;
-      font-size: 1.3rem;
-      margin-bottom: 0.8rem;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--dota-border);
+            text-align: center;
+            color: #5a4f4a;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
 
-    .card h3 i {
-      color: #b8860b;
-      width: 1.8rem;
-    }
-
-    .card p, .card li {
-      color: #bcc1ca;
-      line-height: 1.6;
-      font-size: 0.98rem;
-    }
-
-    .card ul {
-      list-style: none;
-      padding-left: 6px;
-    }
-
-    .card ul li {
-      padding: 6px 0 6px 28px;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="%23b8860b"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') left center no-repeat;
-      background-size: 18px;
-    }
-
-    .cmd-box {
-      background: #0d1014;
-      border-left: 6px solid #b8860b;
-      padding: 1.2rem 1.8rem;
-      border-radius: 16px;
-      font-family: 'Courier New', monospace;
-      color: #cfd7e6;
-      margin: 1rem 0 0.5rem;
-      overflow-x: auto;
-      white-space: pre-wrap;
-      word-break: break-word;
-      border: 1px solid #3a3f4a;
-    }
-
-    .cmd-box i {
-      color: #e6b422;
-      margin-right: 12px;
-    }
-
-    .link-icon {
-      color: #d4a017;
-      margin-right: 8px;
-      text-decoration: none;
-    }
-
-    .link-icon:hover {
-      color: #f5d77b;
-      text-decoration: underline;
-    }
-
-    .lang-hidden {
-      display: none;
-    }
-
-    .footer-deco {
-      margin-top: 2.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid #2f353e;
-      text-align: center;
-      font-size: 1.8rem;
-      letter-spacing: 10px;
-      opacity: 0.35;
-    }
-
-    @media (max-width: 640px) {
-      .container { padding: 1.5rem 1rem; }
-      .logo h1 { font-size: 1.5rem; }
-      .lang-btn { padding: 4px 12px; font-size: 0.8rem; }
-      .section-title { font-size: 1.5rem; }
-    }
-  </style>
+        /* Адаптив */
+        @media (max-width: 700px) {
+            .container { padding: 15px; }
+            .header { flex-direction: column; align-items: start; gap: 15px; }
+            .logo h1 { font-size: 1.8rem; }
+            .toc ul { flex-direction: column; gap: 5px; }
+            .section h2 { font-size: 1.3rem; flex-wrap: wrap; }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
 
-    <!-- HEADER -->
-    <div class="header">
-      <div class="logo">
-        <i class="fas fa-shield-halved"></i>
-        <h1>⚡FPS BOOST 2026⚡</h1>
-      </div>
-      <div class="lang-toggle">
-        <button class="lang-btn active" id="langRu" data-lang="ru">🇷🇺 RU</button>
-        <button class="lang-btn" id="langEn" data-lang="en">🇬🇧 EN</button>
-      </div>
+<div class="container" id="top">
+
+    <!-- ШАПКА -->
+    <header class="header">
+        <div class="logo">
+            <h1>⚔️ DOTA 2 FPS</h1>
+            <span data-i18n="subtitle">ULTIMATE PERFORMANCE GUIDE 2026</span>
+        </div>
+        <div class="lang-toggle">
+            <button class="lang-btn active" data-lang="ru">RU</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+    </header>
+
+    <!-- ОГЛАВЛЕНИЕ -->
+    <nav class="toc">
+        <h3>📜 CONTENT / СОДЕРЖАНИЕ</h3>
+        <ul>
+            <li><a href="#sec1" data-i18n="toc1">⚡ 1. Консольные команды</a></li>
+            <li><a href="#sec2" data-i18n="toc2">🚀 2. Параметры запуска</a></li>
+            <li><a href="#sec3" data-i18n="toc3">🛠️ 3. Сторонние программы</a></li>
+            <li><a href="#sec4" data-i18n="toc4">🖥️ 4. Настройки системы</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================================================== -->
+    <!-- РАЗДЕЛ 1: КОНСОЛЬНЫЕ КОМАНДЫ                      -->
+    <!-- ================================================== -->
+    <section class="section" id="sec1">
+        <h2>⚡ <span data-i18n="sec1_title">Консольные команды</span> <small>autoexec.cfg</small></h2>
+        <p data-i18n="sec1_desc">Откройте консоль (кнопка <strong>~</strong>) или создайте файл <code>autoexec.cfg</code> в папке <code>Steam\steamapps\common\dota 2 beta\game\dota\cfg</code>. Скопируйте команды ниже:</p>
+
+        <div class="code-block">
+            <span class="comment">// === Dota 2 FPS Boost 2026 ===</span>
+
+            <span class="cmd">r_canvas_major_framebuffer 0</span>       <span class="comment">; Отключает лишние буферы</span>
+            <span class="cmd">r_canvas_minor_framebuffer 0</span>       <span class="comment">; Экономит VRAM</span>
+            <span class="cmd">r_render_use_compressed_pools 1</span>    <span class="comment">; Сжатие текстур в памяти</span>
+            <span class="cmd">r_deferred_additive_pass 0</span>         <span class="comment">; Отключает сложное освещение</span>
+            <span class="cmd">r_deferred_specular 0</span>              <span class="comment">; Отключает блики</span>
+            <span class="cmd">r_deferred_specular_bloom 0</span>        <span class="comment">; Отключает bloom (засветы)</span>
+            <span class="cmd">r_fast_fog 1</span>                       <span class="comment">; Упрощенный туман</span>
+            <span class="cmd">cl_globallight_shadowmode 0</span>        <span class="comment">; Отключает глобальные тени</span>
+            <span class="cmd">cl_forcepreload 1</span>                  <span class="comment">; Предзагрузка ресурсов (снижает лаги)</span>
+            <span class="cmd">fps_max 240</span>                        <span class="comment">; Ограничение FPS (под ваш монитор)</span>
+        </div>
+
+        <p data-i18n="sec1_note">💡 <strong>Важно:</strong> Если игра вылетает — удалите <code>r_canvas_*</code> команды (они новые, работают не на всех видеокартах).</p>
+    </section>
+
+    <!-- ================================================== -->
+    <!-- РАЗДЕЛ 2: ПАРАМЕТРЫ ЗАПУСКА                      -->
+    <!-- ================================================== -->
+    <section class="section" id="sec2">
+        <h2>🚀 <span data-i18n="sec2_title">Параметры запуска Steam</span></h2>
+        <p data-i18n="sec2_desc">В библиотеке Steam → ПКМ по Dota 2 → Свойства → <strong>Параметры запуска</strong>. Вставьте строку:</p>
+
+        <div class="code-block">
+            -novid -console -nojoy -nopreload -high -map dota -vulkan <span class="comment">(или -dx11)</span> -threads 8 -maxmem_1080 4096
+        </div>
+
+        <p data-i18n="sec2_list_title">📌 Что значат флаги:</p>
+        <ul>
+            <li><strong>-novid</strong> <span data-i18n="sec2_novid">— пропуск заставки Valve.</span></li>
+            <li><strong>-console</strong> <span data-i18n="sec2_console">— включает консоль (~).</span></li>
+            <li><strong>-nojoy</strong> <span data-i18n="sec2_nojoy">— отключает поддержку джойстиков.</span></li>
+            <li><strong>-high</strong> <span data-i18n="sec2_high">— высокий приоритет процесса (CPU).</span></li>
+            <li><strong>-vulkan</strong> <span data-i18n="sec2_vulkan">— API Vulkan (даёт +10–20% FPS на новых драйверах).</span> <span class="badge">REC</span></li>
+            <li><strong>-threads 8</strong> <span data-i18n="sec2_threads">— число ядер процессора (измените под своё).</span></li>
+        </ul>
+        <p style="margin-top:10px;" data-i18n="sec2_note">⚠️ Vulkan требует установленного <a href="https://vulkan.lunarg.com/sdk/home" target="_blank">Vulkan Runtime</a> (официальный сайт).</p>
+    </section>
+
+    <!-- ================================================== -->
+    <!-- РАЗДЕЛ 3: СТОРОННИЕ ПРОГРАММЫ                    -->
+    <!-- ================================================== -->
+    <section class="section" id="sec3">
+        <h2>🛠️ <span data-i18n="sec3_title">Сторонние программы</span></h2>
+        <p data-i18n="sec3_desc">Используйте эти утилиты для дополнительной оптимизации системы и Dota 2:</p>
+
+        <ul>
+            <li>
+                <strong>MSI Afterburner + RivaTuner</strong> 
+                <span data-i18n="sec3_afterburner">— мониторинг и разгон видеокарты.</span>
+                <br><a href="https://www.msi.com/Landing/afterburner/graphics-cards" target="_blank" class="btn-dota">Официальный сайт MSI</a>
+            </li>
+            <li style="margin-top:15px;">
+                <strong>Process Lasso</strong> 
+                <span data-i18n="sec3_lasso">— управление приоритетами процессов в реальном времени (фиксит просадки FPS).</span>
+                <br><a href="https://bitsum.com/" target="_blank" class="btn-dota">bitsum.com</a>
+            </li>
+            <li style="margin-top:15px;">
+                <strong>Intelligent Standby List Cleaner (ISLC)</strong> 
+                <span data-i18n="sec3_islc">— очищает кэш памяти Windows, предотвращая микрофризы.</span>
+                <br><a href="https://www.wagnardsoft.com/ISLC" target="_blank" class="btn-dota">wagnardsoft.com</a>
+            </li>
+            <li style="margin-top:15px;">
+                <strong>NVCleanstall</strong> 
+                <span data-i18n="sec3_nvclean">— чистая установка драйверов NVIDIA без телеметрии и лишних компонентов.</span>
+                <br><a href="https://www.techpowerup.com/nvcleanstall/" target="_blank" class="btn-dota">TechPowerUp</a>
+            </li>
+        </ul>
+
+        <p style="margin-top:15px;" data-i18n="sec3_note">📌 <strong>Для AMD:</strong> используйте <a href="https://www.amd.com/en/software/adrenalin" target="_blank">AMD Software Adrenalin</a> с опцией "Performance Mode".</p>
+    </section>
+
+    <!-- ================================================== -->
+    <!-- РАЗДЕЛ 4: НАСТРОЙКИ СИСТЕМЫ                      -->
+    <!-- ================================================== -->
+    <section class="section" id="sec4">
+        <h2>🖥️ <span data-i18n="sec4_title">Настройки Windows и видеокарты</span></h2>
+        
+        <p><strong data-i18n="sec4_win">⚙️ Windows (отключить лишнее):</strong></p>
+        <ul>
+            <li data-i18n="sec4_win1">Отключить <strong>Запись игр (Xbox Game Bar)</strong> и <strong>Режим игры</strong> (он иногда вредит).</li>
+            <li data-i18n="sec4_win2">Включить <strong>Высокую производительность</strong> в настройках электропитания.</li>
+            <li data-i18n="sec4_win3">Отключить визуальные эффекты Windows (Настройки → Спецвозможности → Визуальные эффекты → Отключить анимации).</li>
+        </ul>
+
+        <p style="margin-top:15px;"><strong data-i18n="sec4_nvidia">🎮 Для NVIDIA:</strong></p>
+        <ul>
+            <li data-i18n="sec4_nv1">В панели управления NVIDIA → <strong>Управление параметрами 3D</strong>:</li>
+            <ul>
+                <li><span data-i18n="sec4_nv2">"Предпочтительный режим электропитания" → <strong>Максимальная производительность</strong>.</span></li>
+                <li><span data-i18n="sec4_nv3">"Фильтрация текстур" → <strong>Высокая производительность</strong>.</span></li>
+                <li><span data-i18n="sec4_nv4">"Вертикальный синхроимпульс" → <strong>Выкл.</strong> (в игре тоже).</span></li>
+            </ul>
+        </ul>
+
+        <p style="margin-top:15px;"><strong data-i18n="sec4_amd">🔥 Для AMD:</strong></p>
+        <ul>
+            <li data-i18n="sec4_amd1">В AMD Adrenalin → вкладка "Игры" → Dota 2 → настройте <strong>Radeon Anti-Lag</strong> и <strong>Radeon Boost</strong> (помогает при движении).</li>
+        </ul>
+    </section>
+
+    <!-- ФУТЕР -->
+    <div class="footer">
+        <p>⚔️ Dota 2 FPS Guide 2026 — <span data-i18n="footer">Актуально для патчей весны 2026</span></p>
+        <p style="font-size:0.7rem; margin-top:5px;">Все ссылки ведут на официальные сайты разработчиков.</p>
     </div>
 
-    <!-- ========== РУССКАЯ ВЕРСИЯ ========== -->
-    <div id="contentRu">
-      <!-- Секция 1: Системные настройки -->
-      <div class="section">
-        <div class="section-title"><i class="fas fa-gear"></i> <span>1. Системные настройки</span></div>
-        <div class="card-grid">
-          <div class="card">
-            <h3><i class="fas fa-microchip"></i> План питания</h3>
-            <p>Выберите «Высокая производительность» в параметрах электропитания Windows. <br><i class="fas fa-arrow-right" style="color:#b8860b;"></i> Панель управления → Электропитание.</p>
-          </div>
-          <div class="card">
-            <h3><i class="fas fa-eye"></i> Отключить визуальные эффекты</h3>
-            <p>Настройки быстродействия: «Обеспечить наилучшее быстродействие». <br> <i class="fas fa-arrow-right" style="color:#b8860b;"></i> Система → Доп. параметры → Быстродействие.</p>
-          </div>
-          <div class="card">
-            <h3><i class="fas fa-gamepad"></i> Режим игры</h3>
-            <p>Включите «Режим игры» в Windows и отключите запись фона (Game DVR).</p>
-          </div>
-        </div>
-      </div>
+</div> <!-- конец container -->
 
-      <!-- Секция 2: Видеонастройки Dota 2 -->
-      <div class="section">
-        <div class="section-title"><i class="fas fa-sliders"></i> <span>2. Видео в Dota 2</span></div>
-        <div class="card-grid">
-          <div class="card">
-            <h3><i class="fas fa-image"></i> Качество текстур</h3>
-            <p>Установите «Среднее» или «Низкое». Отключите «Тени», «Окружающие эффекты», «Сглаживание».</p>
-          </div>
-          <div class="card">
-            <h3><i class="fas fa-expand"></i> Разрешение</h3>
-            <p>Используйте разрешение экрана с понижением (например, 1600x900) для прироста FPS.</p>
-          </div>
-          <div class="card">
-            <h3><i class="fas fa-video"></i> Эксклюзивный полноэкранный</h3>
-            <p>Включите полноэкранный режим (не окно) для меньшей задержки.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Секция 3: Консольные команды и параметры запуска -->
-      <div class="section">
-        <div class="section-title"><i class="fas fa-terminal"></i> <span>3. Параметры запуска &amp; консоль</span></div>
-        <div class="card">
-          <h3><i class="fas fa-code"></i> Команды для консоли</h3>
-          <div class="cmd-box">
-            <i class="fas fa-cog"></i> cl_forcepreload 1 <br>
-            <i class="fas fa-cog"></i> r_renderoverlayfragment 0 <br>
-            <i class="fas fa-cog"></i> r_deferred_simple_light 0 <br>
-            <i class="fas fa-cog"></i> r_dota_allow_screen_space_reflections 0
-          </div>
-          <p style="margin-top: 10px;"><i class="fas fa-chevron-right" style="color:#b8860b;"></i> Добавьте в параметры запуска: <span class="cmd-box" style="display:inline-block; padding: 0.2rem 1rem;">-dx11 -threads 4 -high -novid -nojoy</span></p>
-        </div>
-      </div>
-
-      <!-- Секция 4: Сторонние приложения -->
-      <div class="section">
-        <div class="section-title"><i class="fas fa-download"></i> <span>4. Сторонние утилиты</span></div>
-        <div class="card-grid">
-          <div class="card">
-            <h3><i class="fas fa-rocket"></i> MSI Afterburner</h3>
-            <p>Разгон и мониторинг GPU. <br> <a href="https://www.msi.com/Landing/afterburner/graphics-cards" target="_blank" class="link-icon"><i class="fas fa-external-link-alt"></i> Официальный сайт</a></p>
-          </div>
-          <div class="card">
-            <h3><i class="fas fa-bolt"></i> Nvidia Profile Inspector</h3>
-            <p>Тонкая настройка драйвера. <br> <a href="https://nvidiaprofileinspector.com/" target="_blank" class="link-icon"><i class="fas fa-external-link-alt"></i> Скачать</a></p>
-          </div>
-          <div class="card">
-            <h3><i class="fas fa-tachometer-alt"></i> RivaTuner</h3>
-            <p>Ограничение FPS, мониторинг. Входит в состав MSI Afterburner.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Секция 5: Очистка и настройки ОС -->
-      <div class="section">
-        <div class="section-title"><i class="fas fa-broom"></i> <span>5. Очистка и настройки ОС</span></div>
-        <div class="card">
-          <ul>
-            <li>Отключите ненужные фоновые приложения (автозагрузка).</li>
-            <li>Обновите драйверы видеокарты (чистая установка).</li>
-            <li>Отключите анимации в Windows (Система → Доп. параметры → Быстродействие).</li>
-            <li>Закройте браузер и программы во время игры.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- ========== АНГЛИЙСКАЯ ВЕРСИЯ ========== -->
-    <div id="contentEn" class="lang-hidden">
-      <!-- Section 1 -->
-      <div class="section">
-        <div class="section-title"><i class="fas fa-gear"></i> <span>1. System Settings</span></div>
-        <div class="card-grid">
-          <div class="card">
-            <h3><i class="fas fa-microchip"></i> Power Plan</h3>
-            <p>Set “High Performance” in Windows Power Options. <br><i class="fas fa-arrow-right" style="color:#b8860b;"></i> Control Panel → Power Options.</p>
-          </div>
-          <div class="card">
-            <h3><i class="fas fa-eye"></i> Disable visual effects</h3>
-            <p>Performance settings: “Adjust for best performance”. <br> <i class="fas fa-arrow-right" style="color:#b8860b;"></i> System → Advanced → Performance.</p>
-          </div>
-          <div class="card">
-            <h3><i class="fas fa-gamepad"></i> Game Mode</h3>
-            <p>Enable “Game Mode” in Windows and turn off background recording (Game DVR).</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Section 2 -->
-      <div class="section">
-        <div class="section-title"><i class="fas fa-sliders"></i> <span>2. Dota 2 Video Settings</span></div>
-        <div class="card-grid">
-          <div class="card">
-            <h3><i class="fas fa-image"></i> Texture Quality</h3>
-            <p>Set “Medium” or “Low”. Disable “Shadows”, “Ambient Effects”, “Anti-aliasing”.</p>
-          </div>
-          <div class="card">
-            <h3><i class="fas fa-expand"></i> Resolution</h3>
-            <p>Lower resolution (e.g. 1600x900) for FPS boost.</p>
-          </div>
-          <div class="card">
-            <h3><i class="fas fa-video"></i> Exclusive Fullscreen</h3>
-            <p>Enable fullscreen (not windowed) for lower latency.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Section 3 -->
-      <div class="section">
-        <div class="section-title"><i class="fas fa-terminal"></i> <span>3. Launch Options & Console</span></div>
-        <div class="card">
-          <h3><i class="fas fa-code"></i> Console commands</h3>
-          <div class="cmd-box">
-            <i class="fas fa-cog"></i> cl_forcepreload 1 <br>
-            <i class="fas fa-cog"></i> r_renderoverlayfragment 0 <br>
-            <i class="fas fa-cog"></i> r_deferred_simple_light 0 <br>
-            <i class="fas fa-cog"></i> r_dota_allow_screen_space_reflections 0
-          </div>
-          <p style="margin-top: 10px;"><i class="fas fa-chevron-right" style="color:#b8860b;"></i> Add to launch options: <span class="cmd-box" style="display:inline-block; padding: 0.2rem 1rem;">-dx11 -threads 4 -high -novid -nojoy</span></p>
-        </div>
-      </div>
-
-      <!-- Section 4 -->
-      <div class="section">
-        <div class="section-title"><i class="fas fa-download"></i> <span>4. Third-party Utilities</span></div>
-        <div class="card-grid">
-          <div class="card">
-            <h3><i class="fas fa-rocket"></i> MSI Afterburner</h3>
-            <p>GPU overclock & monitoring. <br> <a href="https://www.msi.com/Landing/afterburner/graphics-cards" target="_blank" class="link-icon"><i class="fas fa-external-link-alt"></i> Official site</a></p>
-          </div>
-          <div class="card">
-            <h3><i class="fas fa-bolt"></i> Nvidia Profile Inspector</h3>
-            <p>Fine-tune driver settings. <br> <a href="https://nvidiaprofileinspector.com/" target="_blank" class="link-icon"><i class="fas fa-external-link-alt"></i> Download</a></p>
-          </div>
-          <div class="card">
-            <h3><i class="fas fa-tachometer-alt"></i> RivaTuner</h3>
-            <p>FPS limiter & monitoring. Included with MSI Afterburner.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Section 5 -->
-      <div class="section">
-        <div class="section-title"><i class="fas fa-broom"></i> <span>5. OS Cleanup & Tweaks</span></div>
-        <div class="card">
-          <ul>
-            <li>Disable unnecessary background apps (startup).</li>
-            <li>Update GPU drivers (clean install).</li>
-            <li>Turn off Windows animations (System → Advanced → Performance).</li>
-            <li>Close browser and other apps while gaming.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- ДЕКОРАТИВНАЯ СТРОКА БЕЗ FANPAY (только смайлы) -->
-    <div class="footer-deco">
-      🗡️ 🛡️ 💀 🏹 ⚔️ 🔥
-    </div>
-  </div>
-
-  <!-- Переключение языков -->
-  <script>
+<!-- ================================================== -->
+<!-- СКРИПТ ПЕРЕКЛЮЧЕНИЯ ЯЗЫКОВ                        -->
+<!-- ================================================== -->
+<script>
     (function() {
-      const ruBtn = document.getElementById('langRu');
-      const enBtn = document.getElementById('langEn');
-      const contentRu = document.getElementById('contentRu');
-      const contentEn = document.getElementById('contentEn');
+        // ------ Словарь переводов ------
+        const translations = {
+            ru: {
+                subtitle: "МАКСИМАЛЬНЫЙ ГАЙД ПО ПОВЫШЕНИЮ FPS 2026",
+                toc1: "⚡ 1. Консольные команды",
+                toc2: "🚀 2. Параметры запуска",
+                toc3: "🛠️ 3. Сторонние программы",
+                toc4: "🖥️ 4. Настройки системы",
+                sec1_title: "Консольные команды",
+                sec1_desc: "Откройте консоль (кнопка <strong>~</strong>) или создайте файл <code>autoexec.cfg</code> в папке <code>Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\cfg</code>. Скопируйте команды ниже:",
+                sec1_note: "💡 <strong>Важно:</strong> Если игра вылетает — удалите <code>r_canvas_*</code> команды (они новые, работают не на всех видеокартах).",
+                sec2_title: "Параметры запуска Steam",
+                sec2_desc: "В библиотеке Steam → ПКМ по Dota 2 → Свойства → <strong>Параметры запуска</strong>. Вставьте строку:",
+                sec2_list_title: "📌 Что значат флаги:",
+                sec2_novid: "— пропуск заставки Valve.",
+                sec2_console: "— включает консоль (~).",
+                sec2_nojoy: "— отключает поддержку джойстиков.",
+                sec2_high: "— высокий приоритет процесса (CPU).",
+                sec2_vulkan: "— API Vulkan (даёт +10–20% FPS на новых драйверах).",
+                sec2_threads: "— число ядер процессора (измените под своё).",
+                sec2_note: "⚠️ Vulkan требует установленного <a href='https://vulkan.lunarg.com/sdk/home' target='_blank'>Vulkan Runtime</a> (официальный сайт).",
+                sec3_title: "Сторонние программы",
+                sec3_desc: "Используйте эти утилиты для дополнительной оптимизации системы и Dota 2:",
+                sec3_afterburner: "— мониторинг и разгон видеокарты.",
+                sec3_lasso: "— управление приоритетами процессов в реальном времени (фиксит просадки FPS).",
+                sec3_islc: "— очищает кэш памяти Windows, предотвращая микрофризы.",
+                sec3_nvclean: "— чистая установка драйверов NVIDIA без телеметрии и лишних компонентов.",
+                sec3_note: "📌 <strong>Для AMD:</strong> используйте <a href='https://www.amd.com/en/software/adrenalin' target='_blank'>AMD Software Adrenalin</a> с опцией 'Performance Mode'.",
+                sec4_title: "Настройки Windows и видеокарты",
+                sec4_win: "⚙️ Windows (отключить лишнее):",
+                sec4_win1: "Отключить <strong>Запись игр (Xbox Game Bar)</strong> и <strong>Режим игры</strong> (он иногда вредит).",
+                sec4_win2: "Включить <strong>Высокую производительность</strong> в настройках электропитания.",
+                sec4_win3: "Отключить визуальные эффекты Windows (Настройки → Спецвозможности → Визуальные эффекты → Отключить анимации).",
+                sec4_nvidia: "🎮 Для NVIDIA:",
+                sec4_nv1: "В панели управления NVIDIA → <strong>Управление параметрами 3D</strong>:",
+                sec4_nv2: "\"Предпочтительный режим электропитания\" → <strong>Максимальная производительность</strong>.",
+                sec4_nv3: "\"Фильтрация текстур\" → <strong>Высокая производительность</strong>.",
+                sec4_nv4: "\"Вертикальный синхроимпульс\" → <strong>Выкл.</strong> (в игре тоже).",
+                sec4_amd: "🔥 Для AMD:",
+                sec4_amd1: "В AMD Adrenalin → вкладка \"Игры\" → Dota 2 → настройте <strong>Radeon Anti-Lag</strong> и <strong>Radeon Boost</strong> (помогает при движении).",
+                footer: "Актуально для патчей весны 2026"
+            },
+            en: {
+                subtitle: "ULTIMATE FPS BOOST GUIDE 2026",
+                toc1: "⚡ 1. Console Commands",
+                toc2: "🚀 2. Launch Options",
+                toc3: "🛠️ 3. Third-party Tools",
+                toc4: "🖥️ 4. System Settings",
+                sec1_title: "Console Commands",
+                sec1_desc: "Open the console (<strong>~</strong>) or create <code>autoexec.cfg</code> in <code>Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\cfg</code>. Paste these:",
+                sec1_note: "💡 <strong>Important:</strong> If the game crashes — remove <code>r_canvas_*</code> lines (they are new, not all GPUs support them).",
+                sec2_title: "Steam Launch Options",
+                sec2_desc: "In Steam Library → Right-click Dota 2 → Properties → <strong>Launch Options</strong>. Paste this line:",
+                sec2_list_title: "📌 Flag meanings:",
+                sec2_novid: "— skips Valve intro.",
+                sec2_console: "— enables console (~).",
+                sec2_nojoy: "— disables joystick support.",
+                sec2_high: "— high CPU process priority.",
+                sec2_vulkan: "— Vulkan API (gives +10–20% FPS on new drivers).",
+                sec2_threads: "— number of CPU cores (change to yours).",
+                sec2_note: "⚠️ Vulkan requires <a href='https://vulkan.lunarg.com/sdk/home' target='_blank'>Vulkan Runtime</a> installed (official site).",
+                sec3_title: "Third-party Programs",
+                sec3_desc: "Use these tools for extra system & game optimization:",
+                sec3_afterburner: "— GPU monitoring & overclocking.",
+                sec3_lasso: "— real-time process priority management (fixes FPS drops).",
+                sec3_islc: "— cleans Windows memory cache, prevents micro-stutters.",
+                sec3_nvclean: "— clean NVIDIA driver install without telemetry/bloat.",
+                sec3_note: "📌 <strong>For AMD:</strong> use <a href='https://www.amd.com/en/software/adrenalin' target='_blank'>AMD Software Adrenalin</a> with 'Performance Mode'.",
+                sec4_title: "Windows & GPU Settings",
+                sec4_win: "⚙️ Windows (disable the clutter):",
+                sec4_win1: "Disable <strong>Xbox Game Bar</strong> and <strong>Game Mode</strong> (sometimes hurts performance).",
+                sec4_win2: "Enable <strong>High Performance</strong> power plan.",
+                sec4_win3: "Turn off Windows visual effects (Settings → Accessibility → Visual Effects → Turn off animations).",
+                sec4_nvidia: "🎮 For NVIDIA:",
+                sec4_nv1: "In NVIDIA Control Panel → <strong>Manage 3D Settings</strong>:",
+                sec4_nv2: "\"Power Management\" → <strong>Prefer Maximum Performance</strong>.",
+                sec4_nv3: "\"Texture Filtering\" → <strong>High Performance</strong>.",
+                sec4_nv4: "\"Vertical Sync\" → <strong>Off</strong> (also in-game).",
+                sec4_amd: "🔥 For AMD:",
+                sec4_amd1: "In AMD Adrenalin → 'Gaming' tab → Dota 2 → enable <strong>Radeon Anti-Lag</strong> and <strong>Radeon Boost</strong> (helps during motion).",
+                footer: "Updated for Spring 2026 patches"
+            }
+        };
 
-      function setLang(lang) {
-        if (lang === 'ru') {
-          contentRu.classList.remove('lang-hidden');
-          contentEn.classList.add('lang-hidden');
-          ruBtn.classList.add('active');
-          enBtn.classList.remove('active');
-        } else {
-          contentRu.classList.add('lang-hidden');
-          contentEn.classList.remove('lang-hidden');
-          enBtn.classList.add('active');
-          ruBtn.classList.remove('active');
+        // ------ Получаем элементы ------
+        const langBtns = document.querySelectorAll('.lang-btn');
+        const i18nElements = document.querySelectorAll('[data-i18n]');
+
+        // Функция переключения
+        function setLanguage(lang) {
+            // Меняем активную кнопку
+            langBtns.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            // Обновляем тексты
+            i18nElements.forEach(el => {
+                const key = el.dataset.i18n;
+                if (translations[lang] && translations[lang][key]) {
+                    // Если внутри есть HTML (ссылки) — вставляем как innerHTML
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Сохраняем в localStorage
+            localStorage.setItem('dota2_fps_lang', lang);
         }
-      }
 
-      ruBtn.addEventListener('click', () => setLang('ru'));
-      enBtn.addEventListener('click', () => setLang('en'));
+        // Обработчики кнопок
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const lang = this.dataset.lang;
+                setLanguage(lang);
+            });
+        });
+
+        // ------ Восстанавливаем язык при загрузке ------
+        const savedLang = localStorage.getItem('dota2_fps_lang') || 'ru';
+        setLanguage(savedLang);
+
     })();
-  </script>
+</script>
+
 </body>
 </html>
